@@ -7,6 +7,7 @@ export const GlobalStyles = createGlobalStyle`
 
     body {
         margin: 0;
+		padding: 0;
         box-sizing: border-box;
         font-family: 'Lato', sans-serif;
         font-weight: 400;

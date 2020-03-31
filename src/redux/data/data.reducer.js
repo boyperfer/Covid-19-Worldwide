@@ -1,7 +1,5 @@
 import DataActionTypes from './data.types';
 
-import { countryToggleNumber } from './data.utils';
-
 const INITIAL_STATE = {
 	dataCorona: [],
 	isFetching: true,
@@ -26,14 +24,6 @@ const dataReducer = (state = INITIAL_STATE, action) => {
 				...state,
 				isFetching: false,
 				errorMessage: action.payload
-			};
-		case DataActionTypes.TOGGLE_NUMBER:
-			return {
-				...state,
-				dataCorona: countryToggleNumber(
-					state.dataCorona,
-					action.payload
-				)
 			};
 		default:
 			return state;

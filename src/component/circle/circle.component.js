@@ -1,38 +1,44 @@
-import React, { useState } from 'react';
-import ReactMapGL, { Marker } from 'react-map-gl';
-import { useSelector } from 'react-redux';
+import React from 'react';
+import { Feature } from 'react-mapbox-gl';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { selectDataCorona } from '../../redux/data/data.selectors';
+import { popupToggle } from '../../redux/popup/popup.actions';
+
+// import { selectDataCorona } from '../../redux/data/data.selectors';
 
 import { CircleContainer } from './circle.style';
 
 const Circle = () => {
-	const [viewPort, setViewPort] = useState({
-		latitude: 37.8,
-		longitude: -122.4,
-		zoom: 2,
-		width: '100vw',
-		height: '100vh'
-	});
 	const dataCorona = useSelector(selectDataCorona);
-	return (
-		<ReactMapGL
-			{...viewPort}
-			onViewportChange={setViewPort}
-			mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-			mapStyle='mapbox://styles/boyperfer/ck8c3jmqk2mjy1iqitxwkd1b6'
-		>
-			{dataCorona.map(({ coordinates }, i) => (
-				<Marker
-					key={i}
-					latitude={coordinates[0]}
-					longitude={coordinates[1]}
-				>
-					<CircleContainer />
-				</Marker>
-			))}
-		</ReactMapGL>
-	);
+
+	const dispatch = useDispatch();
+	return dataCorona.map((country, i) => {
+		const { name, coordinates, confirmed } = country;
+		const paint = {
+			'circle-color': 'red',
+			'circle-radius':
+				confirmed > 0 && confirmed <= 1000
+					? 5
+					: confirmed > 1000 && confirmed <= 10000
+					? 10
+					: confirmed > 10000 && confirmed <= 50000
+					? 15
+					: confirmed > 50000 && confirmed <= 100000
+					? 20
+					: 30
+		};
+		return (
+			<CircleContainer key={i} type='circle' paint={paint}>
+				<Feature
+					onClick={() => dispatch(popupToggle(country))}
+					onMouseEnter={() => dispatch(popupToggle(country))}
+					coordinates={[coordinates[1], coordinates[0]]}
+					properties={name}
+				/>
+			</CircleContainer>
+		);
+	});
 };
 
 export default Circle;

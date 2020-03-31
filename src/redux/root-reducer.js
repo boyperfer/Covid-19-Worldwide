@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 
 import dataReducer from './data/data.reducer';
-import toggleReducer from './toggle-hidden/toggle-hidden.reducer';
+import popupReducer from './popup/popup.reducer';
 
 const rootReducer = combineReducers({
 	data: dataReducer,
-	toggle: toggleReducer
+	popup: popupReducer
 });
 
 export default rootReducer;

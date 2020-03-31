@@ -23,3 +23,8 @@ export const CircleContainer = styled(Layer)`
 	border-radius: 10rem;
 	background-color: red;
 `;
+
+export const PopupContainer = styled.div`
+	font-size: 1rem;
+	padding: 0;
+`;

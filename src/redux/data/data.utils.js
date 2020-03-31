@@ -1,15 +1,6 @@
-export const countryToggleNumber = (countries, countryToggle) => {
-	const existingCountry = countries.find(
-		country => country.name === countryToggle.name
-	);
-	console.log(countries);
-	if (existingCountry) {
-		return countries.map(country => {
-			return country.name === countryToggle.name
-				? { ...country, onToggleNumber: !country.onToggleNumber }
-				: country;
-		});
-	}
+import countriesArray from '../../assets/countryflag.json';
 
-	return [...countries, { ...countryToggle, onToggleNumber: false }];
-};
+export const countriesHarsh = countriesArray.reduce((map, obj) => {
+	map[obj.Name.replace(/\s+/g, '').toLowerCase()] = obj.Code.toLowerCase();
+	return map;
+}, {});

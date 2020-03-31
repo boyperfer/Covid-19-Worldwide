@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Mark from './component/mark/mark.component';
 import Map from './component/map/map.component';
 
 import { AppContainer } from './App.style';
@@ -10,7 +9,7 @@ const App = () => {
 	return (
 		<AppContainer>
 			<GlobalStyles />
-			<Mark />
+			<Map />
 		</AppContainer>
 	);
 };

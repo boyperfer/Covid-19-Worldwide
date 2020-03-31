@@ -1,4 +1,5 @@
 import DataActionTypes from './data.types';
+import { countriesHarsh } from './data.utils';
 
 export const fetchDataStart = () => ({
 	type: DataActionTypes.FETCH_DATA_START
@@ -19,10 +20,6 @@ export const toggleNumber = country => ({
 	payload: country
 });
 
-const sleep = ms => {
-	return new Promise(resolve => setTimeout(resolve, ms));
-};
-
 export const fetchDataStartAsync = () => {
 	return async dispatch => {
 		try {
@@ -40,9 +37,12 @@ export const fetchDataStartAsync = () => {
 				confirmed: f.Confirmed,
 				deaths: f.Deaths,
 				recovered: f.Recovered,
-				onToggleNumber: false
+				onToggleNumber: false,
+				code:
+					countriesHarsh[
+						f.Country_Region.replace(/\s+/g, '').toLowerCase()
+					]
 			}));
-			await sleep(100);
 			dispatch(fetchDataSuccess(data));
 		} catch (err) {
 			dispatch(fetchDataFailure(err));
