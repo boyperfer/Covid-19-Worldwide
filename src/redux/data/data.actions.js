@@ -1,4 +1,5 @@
 import DataActionTypes from './data.types';
+
 import { countriesHarsh } from './data.utils';
 
 export const fetchDataStart = () => ({

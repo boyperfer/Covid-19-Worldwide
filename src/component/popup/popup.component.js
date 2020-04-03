@@ -16,7 +16,6 @@ const PopupNumber = () => {
 	return popupCountries !== undefined || popupCountries.length !== 0 ? (
 		popupCountries.map(
 			({ confirmed, deaths, recovered, name, coordinates, code }, i) => {
-				console.log(popupCountries);
 				return (
 					<Popup
 						key={i}

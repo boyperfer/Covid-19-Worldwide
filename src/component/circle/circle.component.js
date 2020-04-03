@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import React from 'react';
 import { Feature, Marker, Layer } from 'react-mapbox-gl';
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,16 +9,17 @@ import {
 	popupToggleHover
 } from '../../redux/popup/popup.actions';
 
-// import { selectDataCorona } from '../../redux/data/data.selectors';
+import { mobileAndTabletcheck } from '../../assets/utils/utils';
 
 import { CoronaContainer } from './circle.style';
-import coronaIcon from '../../assets/corona.png';
+import coronaIcon from '../../assets/icon/resign_corona.png';
 
 const Circle = () => {
 	const dataCorona = useSelector(selectDataCorona);
 
 	const dispatch = useDispatch();
-
+	// device detection
+	const mobileCheck = mobileAndTabletcheck();
 	return dataCorona.map((country, i) => {
 		const { name, coordinates, confirmed } = country;
 		const paint = {
@@ -34,23 +36,42 @@ const Circle = () => {
 					: 30
 		};
 		return name.toLowerCase() === 'china' ? (
-			<Marker
-				coordinates={[105, 25]}
-				onClick={() => dispatch(popupToggleClick(country))}
-				onMouseEnter={() => dispatch(popupToggleHover(country))}
-				anchor='bottom'
-			>
-				<CoronaContainer src={coronaIcon} alt='1' />
-				{console.log(country)}
-			</Marker>
-		) : (
-			<Layer key={i} type='circle' paint={paint}>
-				<Feature
+			mobileCheck ? (
+				<Marker
+					key={i}
+					coordinates={[105, 25]}
+					onClick={() => dispatch(popupToggleClick(country))}
+					anchor='bottom'
+				>
+					<CoronaContainer src={coronaIcon} alt='1' />
+				</Marker>
+			) : (
+				<Marker
+					key={i}
+					coordinates={[105, 25]}
 					onClick={() => dispatch(popupToggleClick(country))}
 					onMouseEnter={() => dispatch(popupToggleHover(country))}
-					coordinates={[coordinates[0], coordinates[1]]}
-					properties={name}
-				/>
+					anchor='bottom'
+				>
+					<CoronaContainer src={coronaIcon} alt='1' />
+				</Marker>
+			)
+		) : (
+			<Layer key={i} type='circle' paint={paint}>
+				{mobileCheck ? (
+					<Feature
+						onClick={() => dispatch(popupToggleClick(country))}
+						coordinates={[coordinates[0], coordinates[1]]}
+						properties={name}
+					/>
+				) : (
+					<Feature
+						onClick={() => dispatch(popupToggleClick(country))}
+						onMouseEnter={() => dispatch(popupToggleHover(country))}
+						coordinates={[coordinates[0], coordinates[1]]}
+						properties={name}
+					/>
+				)}
 			</Layer>
 		);
 	});
