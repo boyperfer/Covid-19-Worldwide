@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Map from './component/map/map.component';
+import MyHome from './component/myhome/myhome.component';
 
 import { AppContainer } from './App.style';
 import { GlobalStyles } from './styles/global-style';
@@ -10,6 +11,7 @@ const App = () => {
 		<AppContainer>
 			<GlobalStyles />
 			<Map />
+			{/* <MyHome /> */}
 		</AppContainer>
 	);
 };

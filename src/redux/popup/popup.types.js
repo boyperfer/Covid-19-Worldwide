@@ -1,5 +1,6 @@
 const PopupActionTypes = {
-	TOGGLE_POPUP: 'TOGGLE_POPUP'
+	TOGGLE_POPUP_HOVER: 'TOGGLE_POPUP_HOVER',
+	TOGGLE_POPUP_CLICK: 'TOGGLE_POPUP_CLICK'
 };
 
 export default PopupActionTypes;

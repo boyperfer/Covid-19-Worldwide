@@ -13,26 +13,40 @@ import {
 
 const PopupNumber = () => {
 	const popupCountries = useSelector(selectPopupCountries);
-	return popupCountries.map(
-		({ confirmed, deaths, recovered, name, coordinates, code }, i) => {
-			return (
-				<Popup key={i} coordinates={[coordinates[1], coordinates[0]]}>
-					<NameContainer>
-						{name}{' '}
-						{typeof code !== 'undefined' ? (
-							<CountryContainer
-								src={`https://lipis.github.io/flag-icon-css/flags/4x3/${code}.svg`}
-							/>
-						) : (
-							<div />
-						)}
-					</NameContainer>
-					<NumberContainer> {confirmed} confirmed </NumberContainer>
-					<NumberContainer> {deaths} deaths </NumberContainer>
-					<NumberContainer> {recovered} recovered </NumberContainer>
-				</Popup>
-			);
-		}
+	return popupCountries !== undefined || popupCountries.length !== 0 ? (
+		popupCountries.map(
+			({ confirmed, deaths, recovered, name, coordinates, code }, i) => {
+				console.log(popupCountries);
+				return (
+					<Popup
+						key={i}
+						coordinates={[coordinates[0], coordinates[1]]}
+					>
+						<NameContainer>
+							{name}{' '}
+							{typeof code !== 'undefined' ? (
+								<CountryContainer
+									src={`https://lipis.github.io/flag-icon-css/flags/4x3/${code}.svg`}
+								/>
+							) : (
+								<div />
+							)}
+						</NameContainer>
+						<NumberContainer>
+							{' '}
+							{confirmed} confirmed{' '}
+						</NumberContainer>
+						<NumberContainer> {deaths} deaths </NumberContainer>
+						<NumberContainer>
+							{' '}
+							{recovered} recovered{' '}
+						</NumberContainer>
+					</Popup>
+				);
+			}
+		)
+	) : (
+		<div />
 	);
 };
 

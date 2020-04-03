@@ -33,7 +33,10 @@ export const fetchDataStartAsync = () => {
 			);
 			const data = await formattedData.map(f => ({
 				name: f.Country_Region,
-				coordinates: [f.Lat, f.Long_],
+				coordinates:
+					f.Country_Region.toLowerCase() === 'china'
+						? [105, 35]
+						: [f.Long_, f.Lat],
 				confirmed: f.Confirmed,
 				deaths: f.Deaths,
 				recovered: f.Recovered,
