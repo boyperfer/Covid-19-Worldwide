@@ -8,7 +8,8 @@ import './popup.styles.scss';
 import {
 	NumberContainer,
 	NameContainer,
-	CountryContainer
+	CountryContainer,
+	PopupContainer,
 } from './popup.styles';
 
 const PopupNumber = () => {
@@ -17,7 +18,7 @@ const PopupNumber = () => {
 		popupCountries.map(
 			({ confirmed, deaths, recovered, name, coordinates, code }, i) => {
 				return (
-					<Popup
+					<PopupContainer
 						key={i}
 						coordinates={[coordinates[0], coordinates[1]]}
 					>
@@ -40,7 +41,7 @@ const PopupNumber = () => {
 							{' '}
 							{recovered} recovered{' '}
 						</NumberContainer>
-					</Popup>
+					</PopupContainer>
 				);
 			}
 		)
