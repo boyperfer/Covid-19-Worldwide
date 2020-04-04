@@ -1,5 +1,4 @@
 import React from 'react';
-import { Popup } from 'react-mapbox-gl';
 import { useSelector } from 'react-redux';
 
 import { selectPopupCountries } from '../../redux/popup/popup.selectors';

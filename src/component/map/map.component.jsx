@@ -12,7 +12,7 @@ import './map.styles.scss';
 
 const MapGl = ReactMapboxGl({
 	accessToken: process.env.REACT_APP_MAPBOX_TOKEN,
-	doubleClickZoom: false
+	doubleClickZoom: false,
 });
 
 const Map = () => {
@@ -28,7 +28,7 @@ const Map = () => {
 					height: '100vh',
 					width: '100vw',
 					pitch: 0,
-					bearing: 0
+					bearing: 0,
 				}}
 				zoom={[1.86]}
 				center={[4.805043, 26.356606]}

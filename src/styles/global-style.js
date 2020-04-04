@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 import mainStyle from './main';
 const {
-	device: { mobile, mobileS, mobileSLanscape, mobileLanscape }
+	device: { mobile, mobileS, mobileSLanscape, mobileLanscape },
 	// variables: { white, black }
 } = mainStyle;
 
@@ -19,20 +19,20 @@ export const GlobalStyles = createGlobalStyle`
         }
 
         @media ${mobileLanscape} {
-            font-size: 5px;
+            font-size: 8px;
         }
 
         @media ${mobileSLanscape} {
             font-size: 4px;
         }
+		margin: 0;
    }
 
     body {
         margin: 0;
         box-sizing: border-box;
-        font-family: 'Lato', sans-serif;
+        font-family: 'Avenir Next', sans-serif;
         font-weight: 400;
-        line-height: 1.8;
         height: 100vh;
     }
 
