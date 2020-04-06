@@ -11,3 +11,13 @@ export const selectIsFetching = createSelector(
 	[selectData],
 	({ isFetching }) => isFetching
 );
+
+export const selectDataObjectCorona = createSelector(
+	[selectData],
+	({ dataObjectCorona }) => dataObjectCorona
+);
+
+export const selectIsFetchingObject = createSelector(
+	[selectData],
+	({ isFetchingObject }) => isFetchingObject
+);
