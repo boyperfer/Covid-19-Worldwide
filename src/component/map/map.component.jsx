@@ -16,6 +16,7 @@ const MapGl = ReactMapboxGl({
 });
 
 const Map = () => {
+	console.log(process.env.REACT_APP_MAPBOX_TOKEN);
 	const dispatch = useDispatch();
 	useEffect(() => {
 		dispatch(fetchDataStartAsync());
