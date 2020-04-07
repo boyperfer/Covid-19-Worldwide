@@ -21,6 +21,7 @@ export const LinkContainer = styled.div`
 	border: 1px solid ${greyDark1};
 	border-bottom: 2px solid ${greyDark1};
 	@media ${mobile} {
-		font-size: 2rem;
+		font-size: 2.4rem;
+		padding: 0.4rem 2.5rem;
 	}
 `;
