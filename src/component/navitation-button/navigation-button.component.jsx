@@ -1,8 +1,7 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
-import { selectOnNavigation } from '../../redux/navigation/navigation.selectors';
-import { toggleNavigation } from '../../redux/navigation/navigation.actions';
+import { toggleMyHome } from '../../redux/myhome/myhome.actions';
 
 import {
 	NavigationContainer,
@@ -11,14 +10,14 @@ import {
 } from './navigation-button.styles';
 
 const NavigationButton = () => {
-	const onNavigation = useSelector(selectOnNavigation);
 	const dispatch = useDispatch();
 	return (
-		<NavigationContainer>
-			<NavigationControl onClick={() => dispatch(toggleNavigation())}>
-				<NavigationLogo on={onNavigation} />
+		<div>
+			<NavigationContainer />
+			<NavigationControl onClick={() => dispatch(toggleMyHome())}>
+				<NavigationLogo />
 			</NavigationControl>
-		</NavigationContainer>
+		</div>
 	);
 };
 

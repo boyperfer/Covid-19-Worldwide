@@ -13,11 +13,12 @@ export const AppContainer = styled.div`
 	height: 100vh;
 	display: grid;
 	grid-template-columns: 25vw 75vw;
-	justify-content: center;
+
 	align-content: center;
 
 	@media ${mobile} {
 		display: flex;
+		justify-content: center;
 	}
 `;
 

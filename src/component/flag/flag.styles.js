@@ -23,5 +23,5 @@ export const NameCountryContainer = styled.h1`
 
 export const ImgContainer = styled.img`
 	width: 6rem;
-	height: 6rem;
+	max-height: 6rem;
 `;

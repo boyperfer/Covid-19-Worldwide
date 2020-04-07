@@ -40,7 +40,7 @@ const getColorNumber = ({ recovered, confirmed, deaths }) => {
 		: confirmed
 		? css`
 				color: ${primary};
-				font-size: 9rem;
+				font-size: 8rem;
 				@media ${mobile} {
 					font-size: 12rem;
 				}

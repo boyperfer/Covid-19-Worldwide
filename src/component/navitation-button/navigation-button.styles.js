@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 import mainStyle from '../../styles/main';
 
@@ -8,34 +8,9 @@ const {
 	device: { mobile, mobileS, mobileSLanscape, mobileLanscape },
 } = mainStyle;
 
-const getIcon = ({ on }) => {
-	return on
-		? css`
-				& {
-					background-color: transparent;
-				}
-
-				&::before {
-					top: 0;
-					transform: rotate(135deg);
-				}
-
-				&::after {
-					top: 0;
-					transform: rotate(-135deg);
-				}
-		  `
-		: null;
-};
-
-export const NavigationContainer = styled.div`
-	display: flex;
-	position: relative;
-	width: min-content;
-	height: min-content;
-`;
-
-export const NavigationControl = styled.div`
+export const NavigationControl = styled.label.attrs({
+	htmlFor: 'input',
+})`
     height: 7rem;
     width: 7rem;
     border-radius: 50%;
@@ -64,9 +39,11 @@ export const NavigationControl = styled.div`
         height: 10rem;
         width: 10rem;
     }
+
+	
 `;
 
-export const NavigationLogo = styled.div`
+export const NavigationLogo = styled.span`
 	position: relative;
 	margin-top: 3.5rem;
 	backface-visibility: hidden;
@@ -96,8 +73,6 @@ export const NavigationLogo = styled.div`
 		top: 0.9rem;
 	}
 
-	${getIcon};
-
 	@media ${mobileSLanscape} {
 		margin-top: 2.5rem;
 		position: relative;
@@ -126,8 +101,6 @@ export const NavigationLogo = styled.div`
 		&::after {
 			top: 0.8rem;
 		}
-
-		${getIcon};
 	}
 
 	@media ${mobile}, ${mobileLanscape} {
@@ -156,7 +129,25 @@ export const NavigationLogo = styled.div`
 		&::after {
 			top: 1.3rem;
 		}
+	}
+`;
 
-		${getIcon};
+export const NavigationContainer = styled.input.attrs({
+	id: 'input',
+	type: 'checkbox',
+})`
+	display: none;
+
+	&:checked + ${NavigationControl} ${NavigationLogo} {
+		background-color: transparent;
+		&::before {
+			top: 0;
+			transform: rotate(-135deg);
+		}
+
+		&::after {
+			top: 0;
+			transform: rotate(135deg);
+		}
 	}
 `;

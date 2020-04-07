@@ -6,13 +6,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectDataCorona } from '../../redux/data/data.selectors';
 import {
 	popupToggleClick,
-	popupToggleHover
+	popupToggleHover,
 } from '../../redux/popup/popup.actions';
 
 import { mobileAndTabletcheck } from '../../assets/utils/utils';
 
 import { CoronaContainer } from './circle.style';
-import coronaIcon from '../../assets/icon/resign_corona.png';
+import coronaIcon from '../../assets/icon/icon_corona.png';
 
 const Circle = () => {
 	const dataCorona = useSelector(selectDataCorona);
@@ -33,7 +33,7 @@ const Circle = () => {
 					? 15
 					: confirmed > 50000 && confirmed <= 100000
 					? 20
-					: 30
+					: 30,
 		};
 		return name.toLowerCase() === 'china' ? (
 			mobileCheck ? (
