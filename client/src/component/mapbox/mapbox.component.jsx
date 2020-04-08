@@ -1,25 +1,18 @@
 /* eslint-disable react/style-prop-object */
-import React, { useEffect } from 'react';
+import React from 'react';
 import ReactMapboxGl from 'react-mapbox-gl';
-import { useDispatch } from 'react-redux';
-
-import { fetchDataStartAsync } from '../../redux/data/data.actions';
 
 import Circle from '../circle/circle.component';
 import PopupNumber from '../popup/popup.component';
 
-import './map.styles.scss';
+import './mapbox.styles.scss';
 
 const MapGl = ReactMapboxGl({
 	accessToken: process.env.REACT_APP_MAPBOX_TOKEN,
 	doubleClickZoom: false,
 });
 
-const Map = () => {
-	const dispatch = useDispatch();
-	useEffect(() => {
-		dispatch(fetchDataStartAsync());
-	}, [dispatch]);
+const MapBox = () => {
 	return (
 		<div>
 			<MapGl
@@ -40,4 +33,4 @@ const Map = () => {
 	);
 };
 
-export default Map;
+export default MapBox;

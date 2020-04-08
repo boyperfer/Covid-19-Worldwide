@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import Map from './component/map/map.component';
+import MapPage from './component/map-page/map-page.component';
 import MyHome from './component/myhome/myhome.component';
 import mainStyle from './styles/main';
 
@@ -30,7 +30,7 @@ export const MyHomeContainer = styled(MyHome)`
 	}
 `;
 
-export const MapContainer = styled(Map)`
+export const MapContainer = styled(MapPage)`
 	grid-column: 2/3;
 
 	@media ${mobile} {

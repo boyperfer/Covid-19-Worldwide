@@ -23,3 +23,15 @@ export const fadeOutDown = keyframes`
 	
   }
 `;
+
+export const loadingCircle = keyframes`
+    to {
+        transform: rotate(360deg);
+    }
+`;
+
+export const loadingText = keyframes`
+    to {
+        transform: rotate(-360deg);
+    }
+`;
