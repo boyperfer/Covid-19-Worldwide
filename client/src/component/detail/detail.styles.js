@@ -53,6 +53,7 @@ const getColorNumber = ({ recovered, confirmed, deaths }) => {
 const getItem = ({ one, two, three }) => {
 	return one
 		? css`
+				border-top: 1px solid ${greyDark1};
 				grid-row: 1 /2;
 		  `
 		: two
@@ -80,6 +81,10 @@ export const WrapContainer = styled.div`
 	padding: 1rem 0;
 	border-bottom: 1px solid ${greyDark1};
 	${getItem}
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 `;
 
 export const NameContainer = styled.p`
@@ -101,7 +106,7 @@ export const NumberContainer = styled.span`
 	font-weight: 700;
 
 	@media ${mobile} {
-		font-size: 8rem;
+		font-size: 10rem;
 	}
 	${getColorNumber}
 `;

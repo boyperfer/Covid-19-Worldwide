@@ -7,18 +7,24 @@ import {
 	selectIsFetchingObject,
 } from '../../redux/data/data.selectors';
 import { selectHome } from '../../redux/myhome/myhome.selectors';
+import { selectVietnamese } from '../../redux/language/language.selectors';
+
+import { vernacular } from '../../assets/utils/utils';
 
 import { DateContainer, TitleContainer, TimeContainer } from './date.styles';
 
 const Date = () => {
 	const dataObject = useSelector(selectDataObjectCorona);
 	const home = useSelector(selectHome);
+	const isVietnamese = useSelector(selectVietnamese);
+	const name = isVietnamese ? vernacular['VN'] : vernacular['ENG'];
 	const isFetchingObject = useSelector(selectIsFetchingObject);
-	const country = isFetchingObject ? {} : dataObject[home];
-	const { lastUpdate } = country;
+	const numnber = isFetchingObject ? {} : dataObject[home];
+	const { lastUpdate } = numnber;
+	const { lastUpdateW } = name;
 	return (
 		<DateContainer>
-			<TitleContainer>Ngày cuối cập nhật (M/D/YYYY)</TitleContainer>
+			<TitleContainer>{lastUpdateW} (M/D/YYYY)</TitleContainer>
 			<TimeContainer>{lastUpdate}</TimeContainer>
 		</DateContainer>
 	);

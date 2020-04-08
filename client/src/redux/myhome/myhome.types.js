@@ -1,6 +1,7 @@
 const MyHomeActionTypes = {
 	CHANGE_MYHOME: 'CHANGE_MYHOME',
 	TOGGLE_MYHOME: 'TOGGLE_MYHOME',
+	TOGGLE_BACKGROUND_HOME: 'TOGGLE_BACKGROUND_HOME',
 };
 
 export default MyHomeActionTypes;

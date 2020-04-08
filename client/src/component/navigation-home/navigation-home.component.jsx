@@ -1,21 +1,55 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { changeMyHome } from '../../redux/myhome/myhome.actions';
+import { changeLanguage } from '../../redux/language/language.actions';
+import {
+	changeMyHome,
+	toggleBackgroundHome,
+} from '../../redux/myhome/myhome.actions';
 
-import { NavContainer, LinkContainer } from './navigation-home.styles';
+import { selectVietnamese } from '../../redux/language/language.selectors';
+import { selectToggleBackgroundHome } from '../../redux/myhome/myhome.selectors';
+
+import {
+	NavContainer,
+	LinkVietnamContainer,
+	LinkUsContainer,
+	LanguageContainer,
+	LinkOthersContainer,
+} from './navigation-home.styles';
 
 const NavigationHome = () => {
 	const dispatch = useDispatch();
+	const vietnamese = useSelector(selectVietnamese);
+	const home = useSelector(selectToggleBackgroundHome);
+	const vernaculer = vietnamese ? 'EN' : 'VN';
 	return (
-		<NavContainer>
-			<LinkContainer onClick={() => dispatch(changeMyHome('vietnam'))}>
+		<NavContainer home={home}>
+			<LinkVietnamContainer
+				onClick={() => {
+					dispatch(changeMyHome('vietnam'));
+					dispatch(toggleBackgroundHome('vietnam'));
+				}}
+			>
 				VN
-			</LinkContainer>
-			<LinkContainer onClick={() => dispatch(changeMyHome('us'))}>
+			</LinkVietnamContainer>
+			<LinkUsContainer
+				onClick={() => {
+					dispatch(toggleBackgroundHome('us'));
+					dispatch(changeMyHome('us'));
+				}}
+			>
 				US
-			</LinkContainer>
-			<LinkContainer>Others</LinkContainer>
+			</LinkUsContainer>
+			<LinkOthersContainer
+				onClick={() => dispatch(toggleBackgroundHome('others'))}
+			>
+				Others
+			</LinkOthersContainer>
+
+			<LanguageContainer onClick={() => dispatch(changeLanguage())}>
+				{vernaculer}
+			</LanguageContainer>
 		</NavContainer>
 	);
 };

@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 
 import { selectPopupCountries } from '../../redux/popup/popup.selectors';
 
+import { selectVietnamese } from '../../redux/language/language.selectors';
+
 import './popup.styles.scss';
 import {
 	NumberContainer,
@@ -10,9 +12,13 @@ import {
 	CountryContainer,
 	PopupContainer,
 } from './popup.styles';
+import { vernacular } from '../../assets/utils/utils';
 
 const PopupNumber = () => {
 	const popupCountries = useSelector(selectPopupCountries);
+	const isVietnamese = useSelector(selectVietnamese);
+	const title = isVietnamese ? vernacular['VN'] : vernacular['ENG'];
+	const { deathsW, confirmedW, recoveredW } = title;
 	return popupCountries !== undefined || popupCountries.length !== 0 ? (
 		popupCountries.map(
 			({ confirmed, deaths, recovered, name, coordinates, code }, i) => {
@@ -33,12 +39,15 @@ const PopupNumber = () => {
 						</NameContainer>
 						<NumberContainer>
 							{' '}
-							{confirmed} confirmed{' '}
+							{confirmed} {confirmedW}{' '}
 						</NumberContainer>
-						<NumberContainer> {deaths} deaths </NumberContainer>
 						<NumberContainer>
 							{' '}
-							{recovered} recovered{' '}
+							{deaths} {deathsW}{' '}
+						</NumberContainer>
+						<NumberContainer>
+							{' '}
+							{recovered} {recoveredW}{' '}
 						</NumberContainer>
 					</PopupContainer>
 				);

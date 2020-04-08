@@ -18,3 +18,19 @@ export const mobileAndTabletcheck = () => {
 export const numberWithCommas = (x) => {
 	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 };
+
+export const vernacular = {
+	VN: {
+		confirmedW: 'Ca Nhiễm',
+		deathsW: 'Ca Tử Vong',
+		recoveredW: 'Ca Phục Hồi',
+		lastUpdateW: 'Ngày cuối cập nhật',
+	},
+
+	ENG: {
+		confirmedW: 'Confirmed',
+		deathsW: 'Deaths',
+		recoveredW: 'Recovered',
+		lastUpdateW: 'Last Updated at',
+	},
+};

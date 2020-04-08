@@ -13,3 +13,8 @@ export const selectToggleHome = createSelector(
 	[selectMyHome],
 	({ toggleHome }) => toggleHome
 );
+
+export const selectToggleBackgroundHome = createSelector(
+	[selectMyHome],
+	({ toggleBackgroundHome }) => toggleBackgroundHome
+);

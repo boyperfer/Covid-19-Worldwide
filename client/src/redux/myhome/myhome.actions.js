@@ -8,3 +8,8 @@ export const changeMyHome = (home) => ({
 export const toggleMyHome = () => ({
 	type: MyHomeActionTypes.TOGGLE_MYHOME,
 });
+
+export const toggleBackgroundHome = (home) => ({
+	type: MyHomeActionTypes.TOGGLE_BACKGROUND_HOME,
+	payload: home,
+});
