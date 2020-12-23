@@ -11,7 +11,7 @@ const {
 const getMargin = ({ last }) => {
 	return !last
 		? css`
-				margin-left: 9rem;
+				margin-left: 4rem;
 		  `
 		: css`
 				margin-left: 0;
@@ -40,72 +40,67 @@ const getBackground = ({ home }) => {
 		: null;
 };
 
-export const LinkVietnamContainer = styled.div`
-	font-size: 1.5rem;
-	color: ${textWhite};
-	padding: 0.4rem 1.5rem;
-	margin-right: 1rem;
-	border: 1px solid ${greyDark1};
-	border-bottom: 2px solid ${greyDark1};
+const getContainerStyle = () => {
+	return css`
+		height: 3rem;
+		font-size: 1.5rem;
+		color: ${textWhite};
+		padding: 0.5rem 1.5rem;
+		margin-right: 1rem;
+		border: 1px solid ${greyDark1};
+		border-bottom: 2px solid ${greyDark1};
+		text-align: center;
 
+		@media ${mobile} {
+			font-size: 2.4rem;
+			padding: 0.4rem 2.5rem;
+			height: 100%;
+		}
+	`
+}
+
+export const LinkVietnamContainer = styled.div`
+	${getContainerStyle}
 	&:hover,
 	&:active {
 		background-color: ${greyDark4};
-	}
-
-	@media ${mobile} {
-		font-size: 2.4rem;
-		padding: 0.4rem 2.5rem;
 	}
 `;
 
 export const LinkUsContainer = styled.div`
-	font-size: 1.5rem;
-	color: ${textWhite};
-	padding: 0.4rem 1.5rem;
-	margin-right: 1rem;
-	border: 1px solid ${greyDark1};
-	border-bottom: 2px solid ${greyDark1};
+	${getContainerStyle}
 
 	&:hover,
 	&:active {
 		background-color: ${greyDark4};
-	}
-
-	@media ${mobile} {
-		font-size: 2.4rem;
-		padding: 0.4rem 2.5rem;
 	}
 `;
 
 export const LinkOthersContainer = styled.div`
-	font-size: 1.5rem;
-	color: ${textWhite};
-	padding: 0.4rem 1.5rem;
-	margin-right: 1rem;
-	border: 1px solid ${greyDark1};
-	border-bottom: 2px solid ${greyDark1};
-
+	${getContainerStyle}
 	&:hover,
 	&:active {
 		background-color: ${greyDark4};
 	}
-
-	@media ${mobile} {
-		font-size: 2.4rem;
-		padding: 0.4rem 2.5rem;
-	}
 `;
 
 export const LanguageContainer = styled.div`
-	font-size: 2.5rem;
+	height: 3rem;
+	font-size: 2rem;
+	text-align: center;
 	color: ${textWhite};
 	background-color: transparent;
-	padding: 0.4rem 1.5rem;
+	padding: 0rem 1.5rem;
 	margin-right: 1rem;
 	border: 1px solid ${greyDark1};
 	border-bottom: 2px solid ${greyDark1};
-	${getMargin}
+	${getMargin};
+
+	@media ${mobile} {
+			height: 100%;
+			margin-left: 9rem;
+			font-size: 3rem;
+		}
 `;
 
 export const NavContainer = styled.div`

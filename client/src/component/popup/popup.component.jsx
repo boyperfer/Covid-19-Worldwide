@@ -5,7 +5,6 @@ import { selectPopupCountries } from '../../redux/popup/popup.selectors';
 
 import { selectVietnamese } from '../../redux/language/language.selectors';
 
-import './popup.styles.scss';
 import {
 	NumberContainer,
 	NameContainer,

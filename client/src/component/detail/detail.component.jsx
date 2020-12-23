@@ -27,29 +27,38 @@ const Detail = () => {
 	const title = isVietnamese ? vernacular['VN'] : vernacular['ENG'];
 	const { confirmedW, recoveredW, deathsW } = title;
 	const { confirmed, recovered, deaths } = number;
+	const isMillion = confirmed >= 1000000 ? true : false;
+	console.log(isMillion)
 	return isFetchingObject ? (
 		<div />
 	) : (
 		<TableContainer>
 			<WrapContainer one>
 				<NameContainer> {confirmedW} </NameContainer>
-				<NumberContainer confirmed>
+				<NumberContainer isMillion={isMillion} confirmed={confirmed}>
 					{' '}
-					{numberWithCommas(confirmed)}{' '}
+					{
+						!confirmed ? `...` : numberWithCommas(confirmed)
+					}
 				</NumberContainer>
 			</WrapContainer>
 			<WrapContainer two>
 				<NameContainer recovered> {recoveredW} </NameContainer>
-				<NumberContainer recovered>
+				<NumberContainer isMillion={isMillion} recovered={recovered}>
 					{' '}
-					{numberWithCommas(recovered)}{' '}
+					{
+						!recovered ? `...` : numberWithCommas(recovered)
+					}
 				</NumberContainer>
 			</WrapContainer>
 			<WrapContainer three last>
 				<NameContainer deaths> {deathsW} </NameContainer>
-				<NumberContainer deaths>
+				<NumberContainer isMillion={isMillion} deaths={deaths}>
 					{' '}
-					{numberWithCommas(deaths)}{' '}
+					{
+						!deaths ? `...` : numberWithCommas(deaths)
+					}
+					{' '}
 				</NumberContainer>
 			</WrapContainer>
 		</TableContainer>

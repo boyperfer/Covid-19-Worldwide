@@ -5,13 +5,10 @@ import ReactMapboxGl from 'react-mapbox-gl';
 import Circle from '../circle/circle.component';
 import PopupNumber from '../popup/popup.component';
 
-import './mapbox.styles.scss';
-
 const MapGl = ReactMapboxGl({
 	accessToken: process.env.REACT_APP_MAPBOX_TOKEN,
 	doubleClickZoom: false,
 });
-
 const MapBox = () => {
 	return (
 		<div>

@@ -28,19 +28,31 @@ const getName = ({ recovered, deaths }) => {
 		  `;
 };
 
+const getFontSize = ({ isMillion }) => {
+	return isMillion ? css`
+		font-size: 5rem;
+	`: css`
+		font-size: 7rem;
+	`
+} 
+
+
 const getColorNumber = ({ recovered, confirmed, deaths }) => {
+	console.log(recovered, confirmed, deaths)
 	return recovered
 		? css`
 				color: ${tertiaryLight};
+				${getFontSize}
 		  `
 		: deaths
 		? css`
 				color: ${greyDark3};
+				${getFontSize}
 		  `
 		: confirmed
 		? css`
 				color: ${primary};
-				font-size: 8rem;
+				${getFontSize}
 				@media ${mobile} {
 					font-size: 12rem;
 				}
@@ -102,11 +114,10 @@ export const NameContainer = styled.p`
 
 export const NumberContainer = styled.span`
 	text-align: center;
-	font-size: 6rem;
 	font-weight: 700;
+	${getColorNumber}
 
 	@media ${mobile} {
 		font-size: 10rem;
 	}
-	${getColorNumber}
 `;
