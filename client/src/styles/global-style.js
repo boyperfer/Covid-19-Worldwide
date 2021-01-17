@@ -1,9 +1,9 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
-import mainStyle from './main';
+import mainStyle from "./main";
 const {
-	device: { mobile, mobileS, mobileSLanscape, mobileLanscape },
-	// variables: { white, black }
+    device: { mobile, mobileS, mobileSLanscape, mobileLanscape },
+    // variables: { white, black }
 } = mainStyle;
 
 export const GlobalStyles = createGlobalStyle`
@@ -26,6 +26,8 @@ export const GlobalStyles = createGlobalStyle`
             font-size: 4px;
         }
 		margin: 0;
+        overflow-x:hidden;
+
    }
 
     body {

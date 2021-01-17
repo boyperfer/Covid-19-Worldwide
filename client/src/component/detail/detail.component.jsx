@@ -16,6 +16,7 @@ import {
     NameContainer,
     NumberContainer,
     TableContainer,
+    EllipsisContainer,
 } from "./detail.styles";
 
 const Detail = () => {
@@ -36,21 +37,33 @@ const Detail = () => {
                 <NameContainer> {confirmedW} </NameContainer>
                 <NumberContainer isMillion={isMillion} confirmed={confirmed}>
                     {" "}
-                    {!confirmed ? `...` : numberWithCommas(confirmed)}
+                    {!confirmed ? (
+                        <EllipsisContainer>...</EllipsisContainer>
+                    ) : (
+                        numberWithCommas(confirmed)
+                    )}
                 </NumberContainer>
             </WrapContainer>
             <WrapContainer two>
                 <NameContainer recovered> {recoveredW} </NameContainer>
                 <NumberContainer isMillion={isMillion} recovered={recovered}>
                     {" "}
-                    {!recovered ? `...` : numberWithCommas(recovered)}
+                    {!recovered ? (
+                        <EllipsisContainer>...</EllipsisContainer>
+                    ) : (
+                        numberWithCommas(recovered)
+                    )}
                 </NumberContainer>
             </WrapContainer>
             <WrapContainer three last>
                 <NameContainer deaths> {deathsW} </NameContainer>
                 <NumberContainer isMillion={isMillion} deaths={deaths}>
                     {" "}
-                    {!deaths ? `...` : numberWithCommas(deaths)}{" "}
+                    {!deaths ? (
+                        <EllipsisContainer>...</EllipsisContainer>
+                    ) : (
+                        numberWithCommas(deaths)
+                    )}{" "}
                 </NumberContainer>
             </WrapContainer>
         </TableContainer>

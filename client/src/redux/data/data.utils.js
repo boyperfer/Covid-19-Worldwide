@@ -21,3 +21,6 @@ export const objectFilter = (obj, predicate) =>
     Object.keys(obj)
         .filter((key) => predicate(obj[key]))
         .reduce((res, key) => ((res[key] = obj[key]), res), {});
+
+export const sumCases = (data) =>
+    data.map((obj) => obj.confirmed).reduce((a, b) => a + b, 0);

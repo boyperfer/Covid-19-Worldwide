@@ -4,8 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchDataStartAsync } from "../../redux/data/data.actions";
 
 import { selectIsFetching } from "../../redux/data/data.selectors";
+import { selectCountry } from "../../redux/myhome/myhome.selectors";
 
 import WithLoader from "../with-loader/with-loader.component";
+import DetailOthers from "../detail-others/detail-others.component";
+
+import { DetailOthersContainer } from "./map-page.style";
 
 const Mapbox = lazy(() => import("../mapbox/mapbox.component"));
 
@@ -13,6 +17,7 @@ const MapLoader = WithLoader(Mapbox);
 
 const MapPage = () => {
     const dispatch = useDispatch();
+    const country = useSelector(selectCountry);
     const isFetching = useSelector(selectIsFetching);
     useEffect(() => {
         dispatch(fetchDataStartAsync());
@@ -22,6 +27,8 @@ const MapPage = () => {
             <Suspense fallback={<div>asdf</div>}>
                 <MapLoader isFetching={isFetching} />
             </Suspense>
+            {/* <DetailOthersContainer /> */}
+            {!country.length ? <div /> : <DetailOthers />}
         </div>
     );
 };
