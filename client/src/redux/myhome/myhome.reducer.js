@@ -35,7 +35,7 @@ const myHomeReducer = (state = INITIAL_STATE, action) => {
         case MyHomeActionTypes.CHANGE_COUNTRY:
             return {
                 ...state,
-                country: [action.payload],
+                country: action.payload,
             };
         default:
             return state;

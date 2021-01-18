@@ -36,7 +36,6 @@ const Detail = () => {
             <WrapContainer one>
                 <NameContainer> {confirmedW} </NameContainer>
                 <NumberContainer isMillion={isMillion} confirmed={confirmed}>
-                    {" "}
                     {!confirmed ? (
                         <EllipsisContainer>...</EllipsisContainer>
                     ) : (
@@ -47,7 +46,6 @@ const Detail = () => {
             <WrapContainer two>
                 <NameContainer recovered> {recoveredW} </NameContainer>
                 <NumberContainer isMillion={isMillion} recovered={recovered}>
-                    {" "}
                     {!recovered ? (
                         <EllipsisContainer>...</EllipsisContainer>
                     ) : (
@@ -58,7 +56,6 @@ const Detail = () => {
             <WrapContainer three last>
                 <NameContainer deaths> {deathsW} </NameContainer>
                 <NumberContainer isMillion={isMillion} deaths={deaths}>
-                    {" "}
                     {!deaths ? (
                         <EllipsisContainer>...</EllipsisContainer>
                     ) : (

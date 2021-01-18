@@ -9,8 +9,6 @@ import { selectCountry } from "../../redux/myhome/myhome.selectors";
 import WithLoader from "../with-loader/with-loader.component";
 import DetailOthers from "../detail-others/detail-others.component";
 
-import { DetailOthersContainer } from "./map-page.style";
-
 const Mapbox = lazy(() => import("../mapbox/mapbox.component"));
 
 const MapLoader = WithLoader(Mapbox);
@@ -27,7 +25,6 @@ const MapPage = () => {
             <Suspense fallback={<div>asdf</div>}>
                 <MapLoader isFetching={isFetching} />
             </Suspense>
-            {/* <DetailOthersContainer /> */}
             {!country.length ? <div /> : <DetailOthers />}
         </div>
     );

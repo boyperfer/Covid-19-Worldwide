@@ -6,7 +6,6 @@ import {
     filterCountries,
     changeCountry,
 } from "../../redux/myhome/myhome.actions";
-
 import {
     selectIsFetching,
     selectDataCorona,
@@ -47,7 +46,9 @@ const OtherCountries = () => {
             <WrapContainer>
                 {filter.map((obj) => (
                     <CountryContainer
-                        onClick={() => dispatch(changeCountry(obj.name))}
+                        onClick={() => {
+                            dispatch(changeCountry([obj.name]));
+                        }}
                     >
                         <NameContainer>{obj.name}</NameContainer>
                         <CasesContainer>

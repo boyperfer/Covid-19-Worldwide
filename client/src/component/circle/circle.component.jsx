@@ -23,7 +23,8 @@ const Circle = () => {
     return dataCorona.map((country, i) => {
         const { name, coordinates, confirmed } = country;
         const paint = {
-            "circle-color": "red",
+            "circle-color": "#2a1353",
+            "circle-opacity": 0.3,
             "circle-radius":
                 confirmed > 0 && confirmed <= 1000
                     ? 5

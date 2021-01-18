@@ -11,7 +11,10 @@ const {
 export const TableContainer = styled.div`
     display: flex;
     flex-direction: column;
-    background-color: black;
+    /* background-color: black; */
+
+    /* background-color: #3a1a74; */
+    background-color: white;
     height: 100%;
     overflow: auto;
     overscroll-behavior-y: auto;
@@ -22,7 +25,8 @@ export const TableContainer = styled.div`
 `;
 
 export const SearchFieldWrap = styled.div`
-    background-color: black;
+    /* background-color: black; */
+    background-color: white;
     position: sticky;
     top: 0;
     margin-bottom: 1rem;
@@ -33,14 +37,16 @@ export const SearchFieldWrap = styled.div`
 `;
 
 export const SearchFieldContainer = styled.input`
-    background-color: ${greyDark1};
-    color: ${textWhite};
+    /* background-color: ${greyDark1}; */
+    /* background-color: #3a1a74; */
+    background-color: white;
+    color: ${black};
     text-align: center;
     width: 100%;
     font-size: 2.5rem;
     padding-right: 1rem;
     border: 1px solid ${black};
-    border-top: none;
+    border-radius: 50px;
     @media ${mobile} {
         padding: 0;
         font-size: 3.5rem;
@@ -48,10 +54,11 @@ export const SearchFieldContainer = styled.input`
 `;
 
 export const WrapContainer = styled.div`
-    background-color: black;
-    border: 1px solid black;
+    /* background-color: black; */
+    /* background-color: #3a1a74; */
+
+    border-bottom: 1px solid black;
     padding-right: 1rem;
-    border-bottom: none;
     /* overflow: auto;
     overscroll-behavior-y: auto; */
 
@@ -63,11 +70,14 @@ export const WrapContainer = styled.div`
 export const CountryContainer = styled.div`
     display: flex;
     flex-direction: row;
-    border: 1px solid black;
-    background-color: ${greyDark4};
+    border-bottom: 1px solid rgb(221, 221, 221);
+    margin: 0 2rem;
+    /* background-color: ${greyDark4}; */
+    /* background-color: #e9d2db; */
+    background-color: white;
     font-size: 2.3rem;
     color: ${textWhite};
-    border-bottom: 2px solid ${greyDark1};
+    /* border-bottom: 2px solid ${greyDark1}; */
     padding: 0 1rem;
 
     @media ${mobile} {
@@ -76,10 +86,12 @@ export const CountryContainer = styled.div`
 `;
 
 export const CasesContainer = styled.div`
-    color: ${primary};
+    /* color: ${primary}; */
+    color: #3a1a74;
+    font-weight: 600;
     margin-left: 1rem;
 `;
 
 export const NameContainer = styled.div`
-    color: ${white};
+    color: ${black};
 `;

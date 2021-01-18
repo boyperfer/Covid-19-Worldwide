@@ -27,6 +27,7 @@ export const GlobalStyles = createGlobalStyle`
         }
 		margin: 0;
         overflow-x:hidden;
+        background-color: white;
 
    }
 
