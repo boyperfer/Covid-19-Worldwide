@@ -12,6 +12,7 @@ const {
     variables: { black, white },
     device: { mobile },
     animations: { fadeOutDown, fadeInUp },
+    utils: { boxShadownTable },
 } = mainStyle;
 
 const getAnimation = ({ isOnHome }) => {
@@ -38,6 +39,7 @@ export const OverallContainer = styled.div`
 
 export const HomeContainer = styled.div`
     height: 100vh;
+
     /* background-color: ${black}; */
     /* background-color: #3a1a74; */
     background-color: ${white};
@@ -45,12 +47,15 @@ export const HomeContainer = styled.div`
     grid-template-rows: max-content 1fr max-content min-content;
     grid-template-columns: 25vw;
     justify-content: center;
+    ${boxShadownTable};
     @media ${mobile} {
         position: absolute;
         grid-template-columns: 90vw;
         height: 80vh;
         ${getAnimation}
         z-index: 500;
+        /* box-shadow: 1rem 2rem 2rem 0.8rem #888888; */
+        ${boxShadownTable};
     }
     backface-visibility: hidden;
     overflow: hidden;

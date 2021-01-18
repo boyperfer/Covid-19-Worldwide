@@ -90,8 +90,16 @@ export const CasesContainer = styled.div`
     color: #3a1a74;
     font-weight: 600;
     margin-left: 1rem;
+
+    @media ${mobile} {
+        margin-left: 1.5rem;
+    }
 `;
 
 export const NameContainer = styled.div`
     color: ${black};
+    font-size: 2.2rem;
+    @media ${mobile} {
+        font-size: 3.5rem;
+    }
 `;

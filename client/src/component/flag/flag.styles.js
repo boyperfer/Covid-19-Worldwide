@@ -16,7 +16,7 @@ export const CountryContainer = styled.div`
     /* background-color: ${greyDark4}; */
     /* background-color: #e9d2db; */
     background-color: ${white};
-    margin: 0 10rem;
+    margin: 3rem 5rem;
 `;
 
 export const NameCountryContainer = styled.h1`

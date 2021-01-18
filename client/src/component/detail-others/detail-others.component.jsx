@@ -38,16 +38,16 @@ const DetailOthers = () => {
     const dispatch = useDispatch();
     const chosenCountry = useSelector(selectCountry);
     const dataObjectCorona = useSelector(selectDataObjectCorona);
-    const isFetchingObject = useSelector(selectIsFetchingObject);
-    const country = isFetchingObject
-        ? {}
+    const country = !chosenCountry.length
+        ? []
         : dataObjectCorona[chosenCountry[0].toLowerCase().replace(/\s+/g, "")];
     const { deaths, confirmed, recovered, name, code } = country;
     const isTenMillion = confirmed >= 10000000 ? true : false;
+    const isTenMillionRecovered = recovered >= 10000000 ? true : false;
     console.log(chosenCountry);
     return (
         <DetailOthersContainer>
-            <DetailOthersWrap>
+            <DetailOthersWrap chosenCountry={chosenCountry}>
                 <CloseContainer>
                     <ButtonContainer
                         src={closeImage}
@@ -74,7 +74,9 @@ const DetailOthers = () => {
                     <RecoveredAndDeaths>
                         <RecoveredContainer>
                             <NameRecoveredDeaths src={healthImage} alt={1} />
-                            <NumberRecoveredDeaths>
+                            <NumberRecoveredDeaths
+                                isTenMillionRecovered={isTenMillionRecovered}
+                            >
                                 {!recovered ? (
                                     <EllipsisContainer>...</EllipsisContainer>
                                 ) : (

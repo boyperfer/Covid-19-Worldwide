@@ -1,4 +1,4 @@
-import { keyframes } from 'styled-components';
+import { keyframes } from "styled-components";
 
 export const fadeInUp = keyframes`
   from {
@@ -35,3 +35,25 @@ export const loadingText = keyframes`
         transform: rotate(-360deg);
     }
 `;
+
+export const slideInUp = keyframes`
+   from {
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+`;
+
+export const slideOutDown = keyframes`
+   from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    transform: translate3d(0, 100%, 0);
+  }
+  `;

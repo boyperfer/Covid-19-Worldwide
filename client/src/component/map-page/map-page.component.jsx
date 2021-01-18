@@ -7,7 +7,7 @@ import { selectIsFetching } from "../../redux/data/data.selectors";
 import { selectCountry } from "../../redux/myhome/myhome.selectors";
 
 import WithLoader from "../with-loader/with-loader.component";
-import DetailOthers from "../detail-others/detail-others.component";
+import { DetailOthersContainer } from "./map-page.style";
 
 const Mapbox = lazy(() => import("../mapbox/mapbox.component"));
 
@@ -25,7 +25,7 @@ const MapPage = () => {
             <Suspense fallback={<div>asdf</div>}>
                 <MapLoader isFetching={isFetching} />
             </Suspense>
-            {!country.length ? <div /> : <DetailOthers />}
+            {!country.length ? <div /> : <DetailOthersContainer />}
         </div>
     );
 };

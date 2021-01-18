@@ -1,7 +1,11 @@
 import React from "react";
+
 import { useSelector, useDispatch } from "react-redux";
 
-import { selectFilter } from "../../redux/myhome/myhome.selectors";
+import {
+    selectCountry,
+    selectFilter,
+} from "../../redux/myhome/myhome.selectors";
 import {
     filterCountries,
     changeCountry,
@@ -25,6 +29,7 @@ import {
 
 const OtherCountries = () => {
     const dispatch = useDispatch();
+    const country = useDispatch(selectCountry);
     const countriesFilter = useSelector(selectFilter);
     const dataCorona = useSelector(selectDataCorona);
     const isFetching = useSelector(selectIsFetching);
@@ -34,21 +39,28 @@ const OtherCountries = () => {
         : dataCorona.filter((data) =>
               data.name.toLowerCase().includes(countriesFilter)
           );
+
     return (
         <TableContainer>
             <SearchFieldWrap>
                 <SearchFieldContainer
                     type="search"
                     placeholder="Search Country"
-                    onChange={(e) => dispatch(filterCountries(e.target.value))}
+                    onChange={(e) =>
+                        dispatch(
+                            filterCountries(e.target.value.toLocaleLowerCase())
+                        )
+                    }
                 />
             </SearchFieldWrap>
             <WrapContainer>
-                {filter.map((obj) => (
+                {filter.map((obj, i) => (
                     <CountryContainer
                         onClick={() => {
+                            console.log(obj.name);
                             dispatch(changeCountry([obj.name]));
                         }}
+                        key={i}
                     >
                         <NameContainer>{obj.name}</NameContainer>
                         <CasesContainer>

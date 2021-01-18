@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 
 import mainStyle from "../../styles/main";
+import DEATHS from "../../assets/icon/image-health.png";
 
 const {
     variables: {
@@ -19,16 +20,13 @@ const {
 const getName = ({ recovered, deaths }) => {
     return recovered
         ? css`
-              /* color: ${tertiaryLight}; */
               color: #185c16;
           `
         : deaths
         ? css`
-              /* color: ${greyDark3}; */
               color: #6b1a18;
           `
         : css`
-              /* color: ${textWhite}; */
               color: #3a1a74;
           `;
 };
@@ -36,7 +34,7 @@ const getName = ({ recovered, deaths }) => {
 const getFontSize = ({ isMillion }) => {
     return isMillion
         ? css`
-              font-size: 5rem;
+              font-size: 4.5rem;
               @media ${mobile} {
                   font-size: 7rem;
               }
@@ -93,7 +91,6 @@ const getItem = ({ one, two, three }) => {
 export const TableContainer = styled.div`
     display: grid;
     grid-template-rows: repeat(3, 1fr);
-    margin: 0 1rem;
 
     /* background-color: ${greyDark4}; */
     /* background-color: #e9d2db; */
@@ -104,11 +101,15 @@ export const TableContainer = styled.div`
 
 export const WrapContainer = styled.div`
     text-align: center;
-    padding: 1rem 0;
+    /* padding: 1rem 0; */
     /* border-bottom: 1px solid ${greyDark1}; */
+    position: relative;
+    margin: 0 4rem 2rem 4rem;
     border-bottom: 1rem solid rgb(50, 93, 154);
-    margin: 0 7rem 3rem 7rem;
     ${getItem}
+    @media ${mobile} {
+        margin: 0 7rem 3rem 7rem;
+    }
 
     display: flex;
     flex-direction: column;

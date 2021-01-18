@@ -49,12 +49,9 @@ const getContainerStyle = () => {
     return css`
         height: 3rem;
         font-size: 1.5rem;
-        /* color: ${textWhite}; */
         color: #3a1a74;
         padding: 0.5rem 1.5rem;
         margin-right: 1rem;
-        /* border: 1px solid ${greyDark1}; */
-        /* border-bottom: 2px solid ${greyDark1}; */
         text-align: center;
         background-color: #e9d2db;
 

@@ -60,7 +60,7 @@ const Detail = () => {
                         <EllipsisContainer>...</EllipsisContainer>
                     ) : (
                         numberWithCommas(deaths)
-                    )}{" "}
+                    )}
                 </NumberContainer>
             </WrapContainer>
         </TableContainer>
