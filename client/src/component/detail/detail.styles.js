@@ -1,19 +1,9 @@
 import styled, { css } from "styled-components";
 
 import mainStyle from "../../styles/main";
-import DEATHS from "../../assets/icon/image-health.png";
 
 const {
-    variables: {
-        primary,
-        greyDark4,
-        textWhite,
-        tertiaryLight,
-        greyDark3,
-        greyDark1,
-        white,
-        black,
-    },
+    variables: { textWhite, white },
     device: { mobile },
 } = mainStyle;
 
@@ -50,19 +40,16 @@ const getFontSize = ({ isMillion }) => {
 const getColorNumber = ({ recovered, confirmed, deaths }) => {
     return recovered
         ? css`
-              /* color: ${tertiaryLight}; */
               color: #185c16;
               ${getFontSize}
           `
         : deaths
         ? css`
-              /* color: ${greyDark3}; */
               color: #6b1a18;
               ${getFontSize};
           `
         : confirmed
         ? css`
-              /* color: ${primary}; */
               color: #3a1a74;
               ${getFontSize}
           `
@@ -74,7 +61,6 @@ const getColorNumber = ({ recovered, confirmed, deaths }) => {
 const getItem = ({ one, two, three }) => {
     return one
         ? css`
-              /* border-top: 1px solid ${greyDark1}; */
               grid-row: 1 /2;
           `
         : two
@@ -92,17 +78,12 @@ export const TableContainer = styled.div`
     display: grid;
     grid-template-rows: repeat(3, 1fr);
 
-    /* background-color: ${greyDark4}; */
-    /* background-color: #e9d2db; */
     background-color: ${white};
-    /* height: 100%; */
     align-items: stretch;
 `;
 
 export const WrapContainer = styled.div`
     text-align: center;
-    /* padding: 1rem 0; */
-    /* border-bottom: 1px solid ${greyDark1}; */
     position: relative;
     margin: 0 4rem 2rem 4rem;
     border-bottom: 1rem solid rgb(50, 93, 154);
@@ -118,7 +99,6 @@ export const WrapContainer = styled.div`
 `;
 
 export const NameContainer = styled.p`
-    /* background-color: ${greyDark4}; */
     background-color: transparent;
     font-weight: 500;
     font-size: 3rem;

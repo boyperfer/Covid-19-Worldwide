@@ -2,10 +2,7 @@ import React from "react";
 
 import { useSelector, useDispatch } from "react-redux";
 
-import {
-    selectCountry,
-    selectFilter,
-} from "../../redux/myhome/myhome.selectors";
+import { selectFilter } from "../../redux/myhome/myhome.selectors";
 import {
     filterCountries,
     changeCountry,
@@ -29,7 +26,6 @@ import {
 
 const OtherCountries = () => {
     const dispatch = useDispatch();
-    const country = useDispatch(selectCountry);
     const countriesFilter = useSelector(selectFilter);
     const dataCorona = useSelector(selectDataCorona);
     const isFetching = useSelector(selectIsFetching);
@@ -57,7 +53,6 @@ const OtherCountries = () => {
                 {filter.map((obj, i) => (
                     <CountryContainer
                         onClick={() => {
-                            console.log(obj.name);
                             dispatch(changeCountry([obj.name]));
                         }}
                         key={i}

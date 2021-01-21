@@ -2,10 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { selectCountry } from "../../redux/myhome/myhome.selectors";
-import {
-    selectDataObjectCorona,
-    selectIsFetchingObject,
-} from "../../redux/data/data.selectors";
+import { selectDataObjectCorona } from "../../redux/data/data.selectors";
 
 import { changeCountry } from "../../redux/myhome/myhome.actions";
 
@@ -44,7 +41,6 @@ const DetailOthers = () => {
     const { deaths, confirmed, recovered, name, code } = country;
     const isTenMillion = confirmed >= 10000000 ? true : false;
     const isTenMillionRecovered = recovered >= 10000000 ? true : false;
-    console.log(chosenCountry);
     return (
         <DetailOthersContainer>
             <DetailOthersWrap chosenCountry={chosenCountry}>

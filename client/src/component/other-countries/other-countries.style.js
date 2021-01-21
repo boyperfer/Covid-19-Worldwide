@@ -4,16 +4,14 @@ import mainStyles from "../../styles/main";
 import { black } from "../../styles/variables";
 
 const {
-    variables: { greyDark1, greyDark4, greyDark3, textWhite, primary, white },
+    variables: { textWhite },
     device: { mobile },
 } = mainStyles;
 
 export const TableContainer = styled.div`
     display: flex;
     flex-direction: column;
-    /* background-color: black; */
 
-    /* background-color: #3a1a74; */
     background-color: white;
     height: 100%;
     overflow: auto;
@@ -25,7 +23,6 @@ export const TableContainer = styled.div`
 `;
 
 export const SearchFieldWrap = styled.div`
-    /* background-color: black; */
     background-color: white;
     position: sticky;
     top: 0;
@@ -37,8 +34,6 @@ export const SearchFieldWrap = styled.div`
 `;
 
 export const SearchFieldContainer = styled.input`
-    /* background-color: ${greyDark1}; */
-    /* background-color: #3a1a74; */
     background-color: white;
     color: ${black};
     text-align: center;
@@ -54,13 +49,8 @@ export const SearchFieldContainer = styled.input`
 `;
 
 export const WrapContainer = styled.div`
-    /* background-color: black; */
-    /* background-color: #3a1a74; */
-
     border-bottom: 1px solid black;
     padding-right: 1rem;
-    /* overflow: auto;
-    overscroll-behavior-y: auto; */
 
     @media ${mobile} {
         padding: 0;
@@ -72,12 +62,9 @@ export const CountryContainer = styled.div`
     flex-direction: row;
     border-bottom: 1px solid rgb(221, 221, 221);
     margin: 0 2rem;
-    /* background-color: ${greyDark4}; */
-    /* background-color: #e9d2db; */
     background-color: white;
     font-size: 2.3rem;
     color: ${textWhite};
-    /* border-bottom: 2px solid ${greyDark1}; */
     padding: 0 1rem;
 
     @media ${mobile} {
@@ -86,7 +73,6 @@ export const CountryContainer = styled.div`
 `;
 
 export const CasesContainer = styled.div`
-    /* color: ${primary}; */
     color: #3a1a74;
     font-weight: 600;
     margin-left: 1rem;

@@ -3,10 +3,10 @@ import styled, { css } from "styled-components";
 import mainStyle from "../../styles/main";
 
 const {
-    variables: { white, black, greyDark4, greyDark1 },
+    variables: { white, black, greyDark1 },
     device: { mobile },
     utils: { boxShadownTable },
-    animations: { slideInUp, fadeInUp },
+    animations: { fadeInUp },
 } = mainStyle;
 
 const getColorSizeDeaths = ({ deaths }) => {
@@ -60,15 +60,10 @@ export const DetailOthersContainer = styled.div`
 export const DetailOthersWrap = styled.div`
     position: fixed;
     top: 4rem;
-    /* font-size: 3rem; */
     height: 25vh;
     width: 30vw;
     color: ${greyDark1};
-    /* background-color: ${greyDark4}; */
     background-color: ${white};
-    /* background-color: rgb(255, 249, 239); */
-    /* background-color: #e9d2db; */
-    /* background-color: #e9d2db; */
     ${boxShadownTable}
     ${getAnimation}
     z-index: 3000;
@@ -108,7 +103,6 @@ export const NameContainer = styled.div`
     font-size: 3rem;
     font-weight: 600;
     text-align: center;
-    /* background-color: rgb(255, 249, 239); */
     background-color: ${white};
     color: ${black};
     @media ${mobile} {
@@ -120,7 +114,6 @@ export const ConfirmedContainer = styled.div`
     display: flex;
     flex-direction: column;
     font-size: 3rem;
-    /* border-bottom: 1px solid ${greyDark1}; */
     margin: 2rem 1.5rem 2rem 0rem;
     @media ${mobile} {
         margin: 3rem 1.5rem 2rem 0rem;
@@ -129,7 +122,6 @@ export const ConfirmedContainer = styled.div`
 
 export const CasesContainer = styled.div`
     text-align: center;
-    /* font-size: 3rem; */
     font-weight: 700;
 `;
 

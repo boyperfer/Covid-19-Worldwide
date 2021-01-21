@@ -3,7 +3,6 @@ import styled from "styled-components";
 import mainStyle from "../../styles/main";
 
 const {
-    variables: { primary, black },
     utils: { boxShadowCircle },
     device: { mobile, mobileS, mobileSLanscape, mobileLanscape },
 } = mainStyle;
@@ -14,7 +13,6 @@ export const NavigationControl = styled.label.attrs({
     height: 7rem;
     width: 7rem;
     border-radius: 50%;
-    /* background-color: ${black}; */
     background-color: #2a1353;
 
     position: fixed;
@@ -50,7 +48,6 @@ export const NavigationLogo = styled.span`
     &::before {
         width: 3rem;
         height: 2px;
-        /* background-color: ${primary}; */
         background-color: #e9d2db;
         display: inline-block;
     }
@@ -80,7 +77,6 @@ export const NavigationLogo = styled.span`
         &::before {
             width: 2rem;
             height: 2px;
-            /* background-color: ${primary}; */
             background-color: #e9d2db;
             display: inline-block;
         }
@@ -110,7 +106,6 @@ export const NavigationLogo = styled.span`
         &::after,
         &::before {
             width: 4.5rem;
-            /* background-color: ${primary}; */
             background-color: #e9d2db;
         }
 

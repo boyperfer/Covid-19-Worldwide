@@ -1,9 +1,9 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import mainStyle from "../../styles/main";
 
 const {
-    variables: { greyDark4, textWhite, primary, white, black },
+    variables: { white, black },
     device: { mobile },
 } = mainStyle;
 
@@ -12,15 +12,11 @@ export const CountryContainer = styled.div`
     justify-content: center;
     align-items: center;
     border-bottom: 1rem solid rgb(50, 93, 154);
-
-    /* background-color: ${greyDark4}; */
-    /* background-color: #e9d2db; */
     background-color: ${white};
     margin: 3rem 5rem;
 `;
 
 export const NameCountryContainer = styled.h1`
-    /* color: ${textWhite}; */
     color: 2f173b;
     font-size: 5rem;
     margin: 0;
@@ -37,8 +33,6 @@ export const TotalCasesContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background-color: ${greyDark4}; */
-    /* background-color: #e9d2db; */
     background-color: white;
     margin: 1rem 1rem 1rem 0;
     @media ${mobile} {
@@ -47,7 +41,6 @@ export const TotalCasesContainer = styled.div`
 `;
 
 export const TotalCasesNumberContainer = styled.div`
-    /* color: ${primary}; */
     color: #3a1a74;
     font-size: 5rem;
     font-weight: 700;

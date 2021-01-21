@@ -3,17 +3,13 @@ import styled from "styled-components";
 import mainStyle from "../../styles/main";
 
 const {
-    variables: { greyDark4, white },
+    variables: { white },
     device: { mobile },
 } = mainStyle;
 
 export const DateContainer = styled.div`
-    /* background-color: ${greyDark4}; */
     text-align: center;
     padding: 1rem 1rem;
-    /* color: ${white}; */
-    /* color: #3a1a74; */
-    /* background-color: #e9d2db; */
     background-color: ${white};
     margin: 1rem 1rem;
 `;

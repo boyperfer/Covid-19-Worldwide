@@ -31,7 +31,6 @@ const Flag = () => {
     const isFetchingObject = useSelector(selectIsFetchingObject);
     const country = isFetchingObject ? {} : dataObject[home];
     const { name, code } = country;
-    console.log(isOthers[0]);
     return isOthers[0] === "others" ? (
         <TotalCasesContainer>
             <TotalCaseNameConatiner>Total Cases</TotalCaseNameConatiner>

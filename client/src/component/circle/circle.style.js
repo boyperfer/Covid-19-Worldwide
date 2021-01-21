@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Feature, Marker, Layer } from "react-mapbox-gl";
+import { Layer } from "react-mapbox-gl";
 
 export const CoronaContainer = styled.img`
     height: 10rem;

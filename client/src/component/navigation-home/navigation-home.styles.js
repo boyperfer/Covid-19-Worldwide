@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 import mainStyle from "../../styles/main";
 
 const {
-    variables: { greyDark1, textWhite, greyDark4 },
+    variables: { textWhite },
     device: { mobile },
 } = mainStyle;
 
@@ -21,7 +21,6 @@ const getBackground = ({ home }) => {
     return home[0] === "vietnam"
         ? css`
               ${LinkVietnamContainer} {
-                  /* background-color: ${greyDark4}; */
                   background-color: #3a1a74;
                   color: ${textWhite};
               }
@@ -29,7 +28,6 @@ const getBackground = ({ home }) => {
         : home[0] === "us"
         ? css`
               ${LinkUsContainer} {
-                  /* background-color: ${greyDark4}; */
                   background-color: #3a1a74;
                   color: ${textWhite};
               }
@@ -37,7 +35,6 @@ const getBackground = ({ home }) => {
         : home[0] === "others"
         ? css`
               ${LinkOthersContainer} {
-                  /* background-color: ${greyDark4}; */
                   background-color: #3a1a74;
                   color: ${textWhite};
               }
@@ -67,7 +64,6 @@ export const LinkVietnamContainer = styled.div`
     ${getContainerStyle}
     &:hover,
 	&:active {
-        /* background-color: ${greyDark4}; */
         background-color: #3a1a74;
         color: ${textWhite};
     }
@@ -78,7 +74,6 @@ export const LinkUsContainer = styled.div`
 
     &:hover,
 	&:active {
-        /* background-color: ${greyDark4}; */
         background-color: #3a1a74;
         color: ${textWhite};
     }
@@ -88,7 +83,6 @@ export const LinkOthersContainer = styled.div`
     ${getContainerStyle}
     &:hover,
 	&:active {
-        /* background-color: ${greyDark4}; */
         background-color: #3a1a74;
         color: ${textWhite};
     }
@@ -98,13 +92,10 @@ export const LanguageContainer = styled.div`
     height: 3rem;
     font-size: 2rem;
     text-align: center;
-    /* background-color: transparent; */
     background-color: #e9d2db;
     color: #3a1a74;
     padding: 0rem 1.5rem;
     margin-right: 1rem;
-    /* border: 1px solid ${greyDark1};
-    border-bottom: 2px solid ${greyDark1}; */
     ${getMargin}
 
     @media ${mobile} {

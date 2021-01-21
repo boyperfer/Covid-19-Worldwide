@@ -9,7 +9,7 @@ import Detail from "../detail/detail.component";
 import OtherCountries from "../other-countries/other-countries.component";
 
 const {
-    variables: { black, white },
+    variables: { white },
     device: { mobile },
     animations: { fadeOutDown, fadeInUp },
     utils: { boxShadownTable },
@@ -40,8 +40,6 @@ export const OverallContainer = styled.div`
 export const HomeContainer = styled.div`
     height: 100vh;
 
-    /* background-color: ${black}; */
-    /* background-color: #3a1a74; */
     background-color: ${white};
     display: grid;
     grid-template-rows: max-content 1fr max-content min-content;
@@ -54,7 +52,6 @@ export const HomeContainer = styled.div`
         height: 80vh;
         ${getAnimation}
         z-index: 500;
-        /* box-shadow: 1rem 2rem 2rem 0.8rem #888888; */
         ${boxShadownTable};
     }
     backface-visibility: hidden;
