@@ -1,4 +1,5 @@
 import React from 'react';
+import "flag-icon-css/css/flag-icons.css"
 import { useSelector } from 'react-redux';
 
 import { selectPopupCountries } from '../../redux/popup/popup.selectors';
@@ -30,7 +31,7 @@ const PopupNumber = () => {
 							{name}{' '}
 							{typeof code !== 'undefined' ? (
 								<CountryContainer
-									src={`https://lipis.github.io/flag-icon-css/flags/4x3/${code}.svg`}
+								className={`flag-icon flag-icon-${code}`}
 								/>
 							) : (
 								<div />

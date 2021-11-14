@@ -8,6 +8,7 @@ import { changeCountry } from "../../redux/myhome/myhome.actions";
 
 import { numberWithCommas } from "../../assets/utils/utils";
 
+import "flag-icon-css/css/flag-icons.css"
 import healthImage from "../../assets/icon/image-health.png";
 import deathsImage from "../../assets/icon/deaths.png";
 import closeImage from "../../assets/icon/close.png";
@@ -52,9 +53,7 @@ const DetailOthers = () => {
                 </CloseContainer>
                 <NameContainer>
                     {name}
-                    <ImgContainer
-                        src={`https://lipis.github.io/flag-icon-css/flags/4x3/${code}.svg`}
-                    />
+                    <ImgContainer className={`flag-icon flag-icon-${code}`}  />
                 </NameContainer>
                 <Wrapper>
                     <ConfirmedContainer>

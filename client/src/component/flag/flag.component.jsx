@@ -1,4 +1,5 @@
 import React from "react";
+import "flag-icon-css/css/flag-icons.css"
 
 import { useSelector } from "react-redux";
 
@@ -41,9 +42,7 @@ const Flag = () => {
     ) : (
         <CountryContainer>
             <NameCountryContainer>{name}</NameCountryContainer>
-            <ImgContainer
-                src={`https://lipis.github.io/flag-icon-css/flags/4x3/${code}.svg`}
-            />
+            <ImgContainer className={`flag-icon flag-icon-${code}`}/>
         </CountryContainer>
     );
 };

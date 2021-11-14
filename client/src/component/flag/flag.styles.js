@@ -23,9 +23,9 @@ export const NameCountryContainer = styled.h1`
     padding: 0 1rem;
 `;
 
-export const ImgContainer = styled.img`
+export const ImgContainer = styled.span`
     width: 6rem;
-    max-height: 6rem;
+    height: 6rem;
 `;
 
 export const TotalCasesContainer = styled.div`

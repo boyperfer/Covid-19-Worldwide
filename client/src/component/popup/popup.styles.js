@@ -28,7 +28,7 @@ export const NumberContainer = styled.div`
     margin: 5px 10px;
 `;
 
-export const CountryContainer = styled.img`
+export const CountryContainer = styled.span`
     width: 20px;
     height: 20px;
     margin: 0 10px;

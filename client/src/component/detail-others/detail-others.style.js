@@ -182,7 +182,7 @@ export const NumberRecoveredDeaths = styled.div`
     }
 `;
 
-export const ImgContainer = styled.img`
+export const ImgContainer = styled.span`
     width: 6rem;
     height: 3rem;
     @media ${mobile} {
