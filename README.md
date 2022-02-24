@@ -1,6 +1,6 @@
 ## Covid-19-Worldwide
 
-Covid-19 Worldwide is a React-Redux web app implemented Mapbox as a global map and fetched data from Johns Hopkins University to track the spread of COVID-19 in the United States, Vietnam, and all over the worlds. The app is hosted by Heroku, and I can use in satisfaction wheather on mobile or laptop devices. The app helps me stay updated to the pandemic in easy and convenient ways with just one click thanks to the progressive web app feature of React
+[Covid-19 Worldwide](https://covid19worldwide.herokuapp.com/) is a React-Redux web app implemented Mapbox as a global map and fetched data from Johns Hopkins University to track the spread of COVID-19 in the United States, Vietnam, and all over the worlds. The app is hosted by Heroku, and I can use in satisfaction wheather on mobile or laptop devices. The app helps me stay updated to the pandemic in easy and convenient ways with just one click thanks to the progressive web app feature of React
 
 ## Clone the app
 To clone, run the following from your teminal:
