@@ -6,7 +6,7 @@ import Circle from "../circle/circle.component";
 import PopupNumber from "../popup/popup.component";
 
 const MapGl = ReactMapboxGl({
-    accessToken: process.env.REACT_APP_MAPBOX_TOKEN,
+    accessToken: "pk.eyJ1IjoiYm95cGVyZmVyIiwiYSI6ImNrOGFyNWhncTAweXUzZm55cXRteTYyNmgifQ.OpfZm6alLebIm0iaOi5xYw",
     doubleClickZoom: false,
 });
 const MapBox = () => {
